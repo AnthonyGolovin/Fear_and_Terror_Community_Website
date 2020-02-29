@@ -6,19 +6,25 @@ import Typography from '@material-ui/core/Typography';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import MenuItem from '@material-ui/core/MenuItem';
+import PlugCard from './PlugCard'
 
-
-const divBackStyle = {
-    height: '600px',
-    backgroundImage: 'url(' + 'https://i.imgur.com/K4jLymZ.png' + ')'
+const divStyle = {
+    textAlign: 'center',
+    width: '100%',
+    height: '400px',
+    backgroundColor: '#212121',
+    color: 'white',
+    margin: '0px'
 }
 
 
-export default function FaTBackgroundImg() {
+export default function ContentDiv() {
 
     return (
-        <div style={divBackStyle}>
-        
+        <div style={divStyle}>
+            <p>feqwfef</p>
+            <PlugCard></PlugCard> 
+            
         </div>
     );
   }

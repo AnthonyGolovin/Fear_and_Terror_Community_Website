@@ -3,7 +3,9 @@ import React from 'react';
 import { MuiThemeProvider, createMuiTheme} from '@material-ui/core';
 import NavBar from './Components/NavBar';
 import './App.css';
-import FaTBackgroundImg from './Components/FaTBackgroundImg';
+import ContentDiv from './Components/ContentDiv';
+import FatBackgroundImg from './Components/FatBackgroundImg';
+
 // We don't need this background style anymore. 
 // Visit App.css to see the background of "body"
 
@@ -41,7 +43,9 @@ function App() {
     
       <div className="App" >
         <NavBar></NavBar>
-        <FaTBackgroundImg></FaTBackgroundImg>
+        <FatBackgroundImg></FatBackgroundImg>
+        <ContentDiv></ContentDiv>
+        
         <Switch>
           {/* <Route exact path='/' component={KegList} /> 
       <Route path='/KegAttributes' component={KegAttributes} /> */}
