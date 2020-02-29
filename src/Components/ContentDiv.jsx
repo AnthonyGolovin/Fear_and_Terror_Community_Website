@@ -7,6 +7,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import MenuItem from '@material-ui/core/MenuItem';
 import PlugCard from './PlugCard'
+import Grid from "@material-ui/core/Grid";
 
 const divStyle = {
     textAlign: 'center',
@@ -23,7 +24,18 @@ export default function ContentDiv() {
     return (
         <div style={divStyle}>
             <p>feqwfef</p>
-            <PlugCard></PlugCard> 
+            <Grid container spacing={24}>
+                <Grid item md={4}>
+                    <PlugCard></PlugCard>
+                </Grid>
+                <Grid item md={4}>
+                    <PlugCard></PlugCard> 
+                </Grid>
+                <Grid item md={4}>
+                    <PlugCard></PlugCard> 
+                </Grid>
+            </Grid>
+            
             
         </div>
     );

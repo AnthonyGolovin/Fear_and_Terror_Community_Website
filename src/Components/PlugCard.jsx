@@ -13,7 +13,7 @@ import { MuiThemeProvider, createMuiTheme} from '@material-ui/core';
 const useStyles = makeStyles({
   root: {
     maxWidth: 600,
-    marginLeft: 200,
+    margin: 'auto',
   },
   media: {
     height: 180,
