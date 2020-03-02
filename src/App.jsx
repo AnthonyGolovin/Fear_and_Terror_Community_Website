@@ -5,6 +5,7 @@ import NavBar from './Components/NavBar';
 import './App.css';
 import ContentDiv from './Components/ContentDiv';
 import FatBackgroundImg from './Components/FatBackgroundImg';
+import TwitchEmbed from './Components/TwitchEmbed';
 
 // We don't need this background style anymore. 
 // Visit App.css to see the background of "body"
@@ -45,7 +46,7 @@ function App() {
         <NavBar></NavBar>
         <FatBackgroundImg></FatBackgroundImg>
         <ContentDiv></ContentDiv>
-        
+        <TwitchEmbed></TwitchEmbed>
         <Switch>
           {/* <Route exact path='/' component={KegList} /> 
       <Route path='/KegAttributes' component={KegAttributes} /> */}
