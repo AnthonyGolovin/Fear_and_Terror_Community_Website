@@ -12,36 +12,26 @@ const logoStyle = {
     height: '100px'
 }
 
-function ElevationScroll(props) {
-  const { children, window } = props;
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 0,
-    target: window ? window() : undefined,
-  });
-
-  return React.cloneElement(children, {
-    elevation: trigger ? 4 : 0,
-  });
-}
-
 export default function ElevateAppBar(props) {
 
   return (
       <div>
-      <React.Fragment>
-      <CssBaseline/>
-      <ElevationScroll {...props}>
+      <React.Fragment>      
         <AppBar>
           <Toolbar > 
-          <img src="https://a.thumbs.redditmedia.com/7b_S8mKGe74vu7IVLHoR-Tzj_1Ca2I-d-BA8FscEF04.png" style={logoStyle}/>
-            <Typography variant="h4">Fear and Terror</Typography>
-            <MenuItem>Home</MenuItem>
-            <MenuItem>Love</MenuItem>
-            <MenuItem>Me</MenuItem>
+            <img src="https://a.thumbs.redditmedia.com/7b_S8mKGe74vu7IVLHoR-Tzj_1Ca2I-d-BA8FscEF04.png" style={logoStyle}/>
+            <Box p={1} width="100%" >
+              <Typography variant="h4" style={{float: 'left'}}>Fear and Terror</Typography>
+            </Box>
+            <Box p={1} flexShrink={1} >
+                <MenuItem>Menu</MenuItem></Box>
+            <Box p={2} flexShrink={1} >
+                <MenuItem>Join Us</MenuItem></Box>
+            <Box p={3} flexShrink={1} >
+                <MenuItem>Login</MenuItem></Box>
           </Toolbar>
         </AppBar>
-      </ElevationScroll>
+
       <Toolbar />
     </React.Fragment>
     </div>
