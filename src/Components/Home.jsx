@@ -10,7 +10,6 @@ class Home extends React.Component {
         return(
 
     <div className="Home" >
-        <NavBar></NavBar>
         <FatBackgroundImg></FatBackgroundImg>
         <ContentDiv></ContentDiv>
         <TwitchEmbed></TwitchEmbed>

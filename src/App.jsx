@@ -13,6 +13,7 @@ import NewTicketControl from './Components/TicketPage/NewTicketControl';
 import Admin from './Components/TicketPage/Admin';
 // import NewTicketForm from './Components/TicketPage/NewTicketForm';
 import Moment from 'moment';
+import Home from './Components/Home';
 
 // MUI theme applied to the WHOLE APPLICATION
   const theme = createMuiTheme({
@@ -73,12 +74,9 @@ class App extends React.Component {
     
       <div className="App" >
         <NavBar></NavBar>
-        <FatBackgroundImg></FatBackgroundImg>
-        <ContentDiv></ContentDiv>
-        <TwitchEmbed></TwitchEmbed>
         <Switch>
-  <Route exact path='/' render={()=> <Home></Home> />}
-          <Route exact path='/H' render={()=><TicketList ticketList={this.state.masterTicketList} />} />
+          <Route exact path='/' render={()=> <Home></Home>} />
+          <Route exact path='/viewtickets' render={()=><TicketList ticketList={this.state.masterTicketList} />} />
           <Route path='/newticket' render={()=><NewTicketControl onNewTicketCreation={this.handleAddingNewTicketToList} />} />
           <Route path='/admin' render={(props)=><Admin ticketList={this.state.masterTicketList} currentRouterPath={props.location.pathname}/>} />
           <Route component={Error404} />

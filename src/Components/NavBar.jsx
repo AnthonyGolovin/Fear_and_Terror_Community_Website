@@ -25,7 +25,7 @@ export default function ElevateAppBar(props) {
               <Typography variant="h4" style={{float: 'left'}}>Fear and Terror</Typography>
             </Box>
             <Box p={1} flexShrink={1} >
-                <MenuItem>Home</MenuItem></Box>
+                <MenuItem><Link to="/">Home</Link></MenuItem></Box>
             <Box p={2} flexShrink={1} >
                 <MenuItem><Link to="/newticket">Submit a ticket</Link></MenuItem></Box>
             <Box p={3} flexShrink={1} >
