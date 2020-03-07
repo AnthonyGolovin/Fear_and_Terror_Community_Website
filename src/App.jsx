@@ -1,4 +1,4 @@
-import { Switch } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import React from 'react';
 import { MuiThemeProvider, createMuiTheme} from '@material-ui/core';
 import NavBar from './Components/NavBar';
@@ -6,22 +6,13 @@ import './App.css';
 import ContentDiv from './Components/ContentDiv';
 import FatBackgroundImg from './Components/FatBackgroundImg';
 import TwitchEmbed from './Components/TwitchEmbed';
-
-// We don't need this background style anymore. 
-// Visit App.css to see the background of "body"
-
-/*
-// const backgroundStyle = {
-//    backgroundPosition: 'center center',
-//    height: '100vh',
-//    display: 'inlineBlock',
-//    backgroundRepeat: 'no-repeat',
-//    backgroundSize:'cover',
-//    backgroundImage: 'url(' + 'https://i.imgur.com/K4jLymZ.png' + ')',
-// }; */
-
-
-function App() {
+import Error404 from './Components/TicketPage/Error404';
+import TicketList from './Components/TicketPage/TicketList';
+import Header from './Components/TicketPage/Header';
+import NewTicketControl from './Components/TicketPage/NewTicketControl';
+import Admin from './Components/TicketPage/Admin';
+// import NewTicketForm from './Components/TicketPage/NewTicketForm';
+import Moment from 'moment';
 
 // MUI theme applied to the WHOLE APPLICATION
   const theme = createMuiTheme({
@@ -39,6 +30,44 @@ function App() {
     },
   });
 
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      masterTicketList: []
+    };
+    this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this);
+  }
+
+  componentDidMount() {
+    this.waitTimeUpdateTimer = setInterval(() =>
+      this.updateTicketElapsedWaitTime(),
+    5000
+    );
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.waitTimeUpdateTimer);
+  }
+
+  updateTicketElapsedWaitTime() {
+    let newMasterTicketList = this.state.masterTicketList.slice();
+    newMasterTicketList.forEach((ticket) =>
+      ticket.formattedWaitTime = (ticket.timeOpen).fromNow(true)
+    );
+    this.setState({masterTicketList: newMasterTicketList});
+  }
+
+  handleAddingNewTicketToList(newTicket){
+    var newMasterTicketList = this.state.masterTicketList.slice();
+    newTicket.formattedWaitTime = (newTicket.timeOpen).fromNow(true);
+    newMasterTicketList.push(newTicket);
+    this.setState({masterTicketList: newMasterTicketList});
+  }
+
+  render(){
+
   return (
     <MuiThemeProvider theme={theme}>
     
@@ -48,19 +77,22 @@ function App() {
         <ContentDiv></ContentDiv>
         <TwitchEmbed></TwitchEmbed>
         <Switch>
-          {/* <Route exact path='/' component={KegList} /> 
-      <Route path='/KegAttributes' component={KegAttributes} /> */}
+  <Route exact path='/' render={()=> <Home></Home> />}
+          <Route exact path='/H' render={()=><TicketList ticketList={this.state.masterTicketList} />} />
+          <Route path='/newticket' render={()=><NewTicketControl onNewTicketCreation={this.handleAddingNewTicketToList} />} />
+          <Route path='/admin' render={(props)=><Admin ticketList={this.state.masterTicketList} currentRouterPath={props.location.pathname}/>} />
+          <Route component={Error404} />
         </Switch> 
-        <div style={{fontSize:'40px'}}>{[...new Array(12)]
+        {/* <div style={{fontSize:'40px'}}>{[...new Array(12)]
           .map(
             () => `Cras mattis consectetur purus sit amet fermentum.
 Cras justo odio, dapibus ac facilisis in, egestas eget quam.
 Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
 Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`)
-          .join('\n')}</div>
+          .join('\n')}</div> */}
       </div>
     </MuiThemeProvider>
   );
 }
-
+}
 export default App;

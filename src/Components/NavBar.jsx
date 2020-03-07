@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import MenuItem from '@material-ui/core/MenuItem';
 import Box from "@material-ui/core/Box";
+import { Link } from 'react-router-dom';
 
 const logoStyle = {
     width: '100px',
@@ -24,11 +25,14 @@ export default function ElevateAppBar(props) {
               <Typography variant="h4" style={{float: 'left'}}>Fear and Terror</Typography>
             </Box>
             <Box p={1} flexShrink={1} >
-                <MenuItem>Menu</MenuItem></Box>
+                <MenuItem>Home</MenuItem></Box>
             <Box p={2} flexShrink={1} >
-                <MenuItem>Join Us</MenuItem></Box>
+                <MenuItem><Link to="/newticket">Submit a ticket</Link></MenuItem></Box>
             <Box p={3} flexShrink={1} >
+                <MenuItem>Join Us</MenuItem></Box>
+            <Box p={4} flexShrink={1} >
                 <MenuItem>Login</MenuItem></Box>
+              
           </Toolbar>
         </AppBar>
 
