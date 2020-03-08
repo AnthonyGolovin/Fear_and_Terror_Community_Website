@@ -28,9 +28,11 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### `npm run eject`
+## Webpage draft
+![](Draw.io/FaT_Draft.png)
 
 ## Component Tree
-![](Darw.io/TapRoomComponents.png)
+![](Draw.io/FaT_Diagram.png)
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
