@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/core/styles';
 
 const divStyle = {
   textAlign: 'center',
@@ -17,6 +18,30 @@ const divStyle = {
   marginTop: '0px'
 }
 
+const useStyles = makeStyles({
+  card: {
+      
+      maxWidth: 900,
+    
+  },
+  container: {
+      padding: 30,
+      backgroundColor: "#696969",
+
+  },
+  triangle: {
+      borderLeft: "100px solid #1f1e1e",
+      borderTop: "100px solid transparent",
+      borderBottom: "100px solid transparent",
+      borderRight: "100px solid #1f1e1e",
+      backgroundColor: "#474747",
+
+  },
+  iframeBorder: {
+      border: "10px solid #1f1e1e"
+  }
+});
+
 const divBannerStyle = {
   height: '1200px',
   backgroundImage: 'url(' + 'https://www.voidu.com/content/products/gallery/696204.jpg' + ')',
@@ -26,10 +51,22 @@ const divBannerStyle = {
 }
 
 function ConfirmationQuestions(props){
+
+  const theme = createMuiTheme({
+    palette: {
+        type: 'dark'
+    }
+  });
+
+  const classes = useStyles();
   return (
-    
+    <MuiThemeProvider theme={theme}>
     <div style={divStyle}>
-        
+    <Grid container 
+        spacing={3}  
+        justify="center"
+        alignItems="center">
+      <Grid className={classes.card} item xs>
       <Card>
         <CardContent>
         <Typography gutterBottom variant="h6" component="h2">
@@ -42,9 +79,12 @@ function ConfirmationQuestions(props){
         <Button size="small" color="primary" onClick={props.onTroubleshootingConfirmation}>Yes</Button>
         </CardContent>
       </Card>
+      </Grid>
+    </Grid>
       <div style={divBannerStyle}>
+      </div>
     </div>
-    </div>
+    </MuiThemeProvider>
   );
 }
 

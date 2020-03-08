@@ -41,9 +41,9 @@ function NewTicketForm(props){
     <div style={divStyle}>
       <form onSubmit={handleNewTicketFormSubmission}>
         
-      <TextField id="outlined-basic" label="Outlined" variant="outlined" id='names'
+      <TextField id="outlined-basic" label="Outlined" variant="outlined" id='names' placeholder='Name'
           
-          ref={(input) => {_names = input;}}/>
+          ref={(TextField) => {_names = TextField;}}/>
         <input
           type='text'
           id='location'
