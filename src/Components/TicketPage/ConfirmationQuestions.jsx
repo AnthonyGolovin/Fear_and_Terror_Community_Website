@@ -11,10 +11,18 @@ import Grid from '@material-ui/core/Grid';
 const divStyle = {
   textAlign: 'center',
   width: '100%',
-  height: '400px',
+  height: '200px',
   backgroundColor: '#212121',
   color: 'white',
-  margin: '0px'
+  marginTop: '0px'
+}
+
+const divBannerStyle = {
+  height: '1200px',
+  backgroundImage: 'url(' + 'https://www.voidu.com/content/products/gallery/696204.jpg' + ')',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+  marginTop: '50px'
 }
 
 function ConfirmationQuestions(props){
@@ -34,7 +42,8 @@ function ConfirmationQuestions(props){
         <Button size="small" color="primary" onClick={props.onTroubleshootingConfirmation}>Yes</Button>
         </CardContent>
       </Card>
-      
+      <div style={divBannerStyle}>
+    </div>
     </div>
   );
 }
