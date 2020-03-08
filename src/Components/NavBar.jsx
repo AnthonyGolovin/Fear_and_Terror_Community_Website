@@ -12,11 +12,13 @@ const logoStyle = {
     width: '100px',
     height: '100px'
 }
-
+const spacingStyle = {
+  marginBottom: '30px'
+}
 export default function ElevateAppBar(props) {
 
   return (
-      <div>
+      <div style={spacingStyle}>
       <React.Fragment>      
         <AppBar>
           <Toolbar > 

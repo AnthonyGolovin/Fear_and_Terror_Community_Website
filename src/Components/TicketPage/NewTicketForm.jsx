@@ -2,11 +2,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
 import Moment from 'moment';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField'
 
 function NewTicketForm(props){
   let _names = null;
   let _location = null;
   let _issue = null;
+
+  const useStyles = makeStyles(theme => ({
+    root: {
+      '& > *': {
+        margin: theme.spacing(1),
+        width: 200,
+      },
+    },
+  }));
+
+  const divStyle = {
+    textAlign: 'center',
+    width: '100%',
+    height: '400px',
+    backgroundColor: '#212121',
+    color: 'white',
+    margin: '0px'
+  }
 
   function handleNewTicketFormSubmission(event) {
     event.preventDefault();
@@ -15,14 +35,14 @@ function NewTicketForm(props){
     _location.value = '';
     _issue.value = '';
   }
-
+  const classes = useStyles();
   return (
-    <div>
+    
+    <div style={divStyle}>
       <form onSubmit={handleNewTicketFormSubmission}>
-        <input
-          type='text'
-          id='names'
-          placeholder='Pair Names'
+        
+      <TextField id="outlined-basic" label="Outlined" variant="outlined" id='names'
+          
           ref={(input) => {_names = input;}}/>
         <input
           type='text'
