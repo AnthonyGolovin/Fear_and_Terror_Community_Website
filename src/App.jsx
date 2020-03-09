@@ -11,9 +11,9 @@ import TicketList from './Components/TicketPage/TicketList';
 import Header from './Components/TicketPage/Header';
 import NewTicketControl from './Components/TicketPage/NewTicketControl';
 import Admin from './Components/TicketPage/Admin';
-// import NewTicketForm from './Components/TicketPage/NewTicketForm';
 import Moment from 'moment';
 import Home from './Components/Home';
+import JoinUs from './Components/JoinUs';
 
 // MUI theme applied to the WHOLE APPLICATION
   const theme = createMuiTheme({
@@ -76,6 +76,9 @@ class App extends React.Component {
         <NavBar></NavBar>
         <Switch>
           <Route exact path='/' render={()=> <Home></Home>} />
+          <Route path='/joinus' component={() => { 
+          window.location.href = 'https://discordapp.com/invite/DEXchRX'; 
+          return null;}}/>
           <Route exact path='/viewtickets' render={()=><TicketList ticketList={this.state.masterTicketList} />} />
           <Route path='/newticket' render={()=><NewTicketControl onNewTicketCreation={this.handleAddingNewTicketToList} />} />
           <Route path='/admin' render={(props)=><Admin ticketList={this.state.masterTicketList} currentRouterPath={props.location.pathname}/>} />

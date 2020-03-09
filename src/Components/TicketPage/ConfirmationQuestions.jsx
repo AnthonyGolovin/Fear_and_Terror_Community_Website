@@ -84,6 +84,9 @@ function ConfirmationQuestions(props){
       <div style={divBannerStyle}>
       </div>
     </div>
+    <div className="JoinUs" >
+        <iframe src="https://disweb.dashflo.net/channels/310647178689249281/310647178689249281" height="500px" width="50%"></iframe>
+    </div>
     </MuiThemeProvider>
   );
 }

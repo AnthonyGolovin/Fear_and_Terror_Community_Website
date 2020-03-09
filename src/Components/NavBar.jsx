@@ -31,7 +31,7 @@ export default function ElevateAppBar(props) {
             <Box p={2} flexShrink={1} >
                 <MenuItem><Link to="/newticket">Submit a ticket</Link></MenuItem></Box>
             <Box p={3} flexShrink={1} >
-                <MenuItem>Join Us</MenuItem></Box>
+                <MenuItem><Link to="/joinus">Join Us</Link></MenuItem></Box>
             <Box p={4} flexShrink={1} >
                 <MenuItem>Login</MenuItem></Box>
               
