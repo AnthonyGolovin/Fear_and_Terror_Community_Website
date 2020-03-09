@@ -43,11 +43,19 @@ const useStyles = makeStyles({
 });
 
 const divBannerStyle = {
-  height: '1200px',
+  height: '1300px',
   backgroundImage: 'url(' + 'https://www.voidu.com/content/products/gallery/696204.jpg' + ')',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
-  marginTop: '50px'
+  marginTop: '40px'
+}
+
+const stayPutEffect = {
+    position: 'fixed',
+    top: '10rem',
+    minWidth: '900px',
+    maxWidth: '1200px',
+    paddingTop: '8rem'
 }
 
 function ConfirmationQuestions(props){
@@ -61,31 +69,69 @@ function ConfirmationQuestions(props){
   const classes = useStyles();
   return (
     <MuiThemeProvider theme={theme}>
-    <div style={divStyle}>
+    <div style={divBannerStyle}>
     <Grid container 
         spacing={3}  
         justify="center"
         alignItems="center">
-      <Grid className={classes.card} item xs>
-      <Card>
+
+    <div  style={stayPutEffect}>
+      <Card >
         <CardContent>
-        <Typography gutterBottom variant="h6" component="h2">
-          Submit A ticket:
+        <Typography gutterBottom variant="h4" component="h2">
+          SUBMIT A TICKET
         </Typography>
         <Typography variant="body2" color="textSecondary" component="p">
         Have you tried Working your problems out?
           </Typography>
           <br></br>
-        <Button size="small" color="primary" onClick={props.onTroubleshootingConfirmation}>Yes</Button>
+          <input type="checkbox"/>
+        <Button size="BIG" color="primary" onClick={props.onTroubleshootingConfirmation}>I UNDERSTAND</Button>
         </CardContent>
+        
       </Card>
-      </Grid>
-    </Grid>
-      <div style={divBannerStyle}>
+    <hr></hr>
+      <Card>
+        <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+             MAYBE IT HAS BEEN ASKED BEFORE:
+            </Typography>
+            <br></br>
+            <Typography gutterBottom variant="h6" component="h2">
+             1. Why doesn't FaT like Skinny People?
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+            I was only nine years old. I loved Shrek so much, I had all the merchandise and movies. I'd pray to Shrek every night before I go to bed, thanking for the life I've been given. "Shrek is love", I would say, "Shrek is life". My dad hears me and calls me a faggot. I knew he was just jealous for my devotion of Shrek. I called him a cunt. He slaps me and sends me to go to sleep. I'm crying now and my face hurts. I lay in bed and it's really cold. A warmth is moving towards me. I feel something touch me. It's Shrek. I'm so happy. He whispers in my ear, "This is my swamp". 
+            </Typography>
+            <Typography gutterBottom variant="h6" component="h2">
+             2. Why doesn't FaT like Skinny People?
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+            I was only nine years old. I loved Shrek so much, I had all the merchandise and movies. I'd pray to Shrek every night before I go to bed, thanking for the life I've been given. "Shrek is love", I would say, "Shrek is life". My dad hears me and calls me a faggot. I knew he was just jealous for my devotion of Shrek. I called him a cunt. He slaps me and sends me to go to sleep. I'm crying now and my face hurts. I lay in bed and it's really cold. A warmth is moving towards me. I feel something touch me. It's Shrek. I'm so happy. He whispers in my ear, "This is my swamp". 
+            </Typography>
+            <Typography gutterBottom variant="h6" component="h2">
+             3. Why doesn't FaT like Skinny People?
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+            I was only nine years old. I loved Shrek so much, I had all the merchandise and movies. I'd pray to Shrek every night before I go to bed, thanking for the life I've been given. "Shrek is love", I would say, "Shrek is life". My dad hears me and calls me a faggot. I knew he was just jealous for my devotion of Shrek. I called him a cunt. He slaps me and sends me to go to sleep. I'm crying now and my face hurts. I lay in bed and it's really cold. A warmth is moving towards me. I feel something touch me. It's Shrek. I'm so happy. He whispers in my ear, "This is my swamp". 
+            </Typography>
+            <Typography gutterBottom variant="h6" component="h2">
+             4. Why doesn't FaT like Skinny People?
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+            I was only nine years old. I loved Shrek so much, I had all the merchandise and movies. I'd pray to Shrek every night before I go to bed, thanking for the life I've been given. "Shrek is love", I would say, "Shrek is life". My dad hears me and calls me a faggot. I knew he was just jealous for my devotion of Shrek. I called him a cunt. He slaps me and sends me to go to sleep. I'm crying now and my face hurts. I lay in bed and it's really cold. A warmth is moving towards me. I feel something touch me. It's Shrek. I'm so happy. He whispers in my ear, "This is my swamp". 
+            </Typography>
+          <br></br>
+        <Button size="small" color="primary" onClick={props.onTroubleshootingConfirmation}>OK I GET IT</Button>
+        </CardContent>
+        
+      </Card>
+
+
       </div>
-    </div>
-    <div className="JoinUs" >
-        <iframe src="https://disweb.dashflo.net/channels/310647178689249281/310647178689249281" height="500px" width="50%"></iframe>
+
+
+    </Grid>
     </div>
     </MuiThemeProvider>
   );
