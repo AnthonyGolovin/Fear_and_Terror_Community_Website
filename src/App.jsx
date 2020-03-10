@@ -14,6 +14,8 @@ import Admin from './Components/TicketPage/Admin';
 import Moment from 'moment';
 import Home from './Components/Home';
 import JoinUs from './Components/JoinUs';
+import Homey from './Components/Homey';
+import Login from './Components/Login';
 
 // MUI theme applied to the WHOLE APPLICATION
   const theme = createMuiTheme({
@@ -76,6 +78,7 @@ class App extends React.Component {
         <NavBar></NavBar>
         <Switch>
           <Route exact path='/' render={()=> <Home></Home>} />
+          <Route path='/loginpage' render={()=> <Login></Login>} />
           <Route path='/joinus' component={() => { 
           window.location.href = 'https://discordapp.com/invite/DEXchRX'; 
           return null;}}/>
