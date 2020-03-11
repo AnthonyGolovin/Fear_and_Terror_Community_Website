@@ -18,7 +18,7 @@ import Homey from './Components/Homey';
 import Login from './Components/Login';
 
 // MUI theme applied to the WHOLE APPLICATION
-  const theme = createMuiTheme({
+const theme = createMuiTheme({
     palette: {
       primary: {
         main: '#212121',

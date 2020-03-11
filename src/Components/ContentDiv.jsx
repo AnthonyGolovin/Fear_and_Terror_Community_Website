@@ -8,35 +8,80 @@ import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import MenuItem from '@material-ui/core/MenuItem';
 import PlugCard from './PlugCard'
 import Grid from "@material-ui/core/Grid";
+import { squadImg } from '../Images/halo.jpg'
 
+const squad = require("../Images/squad.jpg")
 const divStyle = {
     textAlign: 'center',
     width: '100%',
     height: '400px',
     backgroundColor: '#212121',
     color: 'white',
-    margin: '0px'
+    padding: '30px'
 }
+
+const imageStyle = {
+    border: '5px'
+}
+
 
 
 export default function ContentDiv() {
 
     return (
-        <div style={divStyle}>
-            <p>feqwfef</p>
-            <Grid container spacing={24}>
-                <Grid item md={4}>
-                    <PlugCard></PlugCard>
+        <div style={divStyle} className="plugcard-annoyance">
+            <Grid container 
+             direction="row"
+             justify="center"
+             alignItems="center"
+             spacing={20}>
+                <Grid item md>
+                    <div className="squadImage plugcard">
+                        <div>
+                            <p style={{paddingTop: "160px"}}>
+                                <img style={{width: "190px"}} src={require("../Images/squadLogo.png")}></img>
+                            <Typography gutterBottom variant="h6" component="h2">
+                                Tactical Game blah blah
+                            </Typography>
+                            <Typography gutterBottom variant="h6" component="h2">
+                                Copy paste the Wikipedia definition
+                            </Typography>
+                            </p>
+                        </div>
+                    </div>
                 </Grid>
-                <Grid item md={4}>
-                    <PlugCard></PlugCard> 
+                <Grid item md>
+                    <div className="haloImage plugcard">
+                    <div>
+                            <p style={{paddingTop: "160px"}}>
+                                <img style={{width: "190px"}} src={require("../Images/squadLogo.png")}></img>
+                            <Typography gutterBottom variant="h6" component="h2">
+                                Tactical Game blah blah
+                            </Typography>
+                            <Typography gutterBottom variant="h6" component="h2">
+                                Copy paste the Wikipedia definition
+                            </Typography>
+                            </p>
+                        </div>
+                    </div>
+
                 </Grid>
-                <Grid item md={4}>
-                    <PlugCard></PlugCard> 
+                <Grid item md>
+                    <div className="rainbowImage plugcard">
+                    <div>
+                            <p style={{paddingTop: "160px"}}>
+                                <img style={{width: "190px"}} src={require("../Images/squadLogo.png")}></img>
+                            <Typography gutterBottom variant="h6" component="h2">
+                                Tactical Game blah blah
+                            </Typography>
+                            <Typography gutterBottom variant="h6" component="h2">
+                                Copy paste the Wikipedia definition
+                            </Typography>
+                            </p>
+                        </div>
+                    </div>
                 </Grid>
             </Grid>
-            
-            
         </div>
     );
   }
