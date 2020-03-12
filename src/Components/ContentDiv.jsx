@@ -1,31 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import MenuItem from '@material-ui/core/MenuItem';
-import PlugCard from './PlugCard'
 import Grid from "@material-ui/core/Grid";
-import { squadImg } from '../Images/halo.jpg'
+import Button from '@material-ui/core/Button';
 
-const squad = require("../Images/squad.jpg")
 const divStyle = {
     textAlign: 'center',
     width: '100%',
-    height: '400px',
+    height: '370px',
     backgroundColor: '#212121',
     color: 'white',
     padding: '30px'
 }
-
-const imageStyle = {
-    border: '5px'
-}
-
-
-
 export default function ContentDiv() {
 
     return (
@@ -38,14 +23,13 @@ export default function ContentDiv() {
                 <Grid item md>
                     <div className="squadImage plugcard">
                         <div>
-                            <p style={{paddingTop: "160px"}}>
+                            <p style={{paddingTop: "80px"}}>
                                 <img style={{width: "190px"}} src={require("../Images/squadLogo.png")}></img>
-                            <Typography gutterBottom variant="h6" component="h2">
-                                Tactical Game blah blah
-                            </Typography>
-                            <Typography gutterBottom variant="h6" component="h2">
-                                Copy paste the Wikipedia definition
-                            </Typography>
+                                <Typography style={{textAlign: "justify", padding: "10px"}}variant="body2" gutterBottom>
+                                    Squad is a tactical first-person shooter video game "set in the current modern day environment" being developed by Canadian studio Offworld Industries.
+                                </Typography>
+                                <br></br>
+                                <Button variant="outlined" color="secondary">Read More</Button>
                             </p>
                         </div>
                     </div>
@@ -53,14 +37,13 @@ export default function ContentDiv() {
                 <Grid item md>
                     <div className="haloImage plugcard">
                     <div>
-                            <p style={{paddingTop: "160px"}}>
-                                <img style={{width: "190px"}} src={require("../Images/squadLogo.png")}></img>
-                            <Typography gutterBottom variant="h6" component="h2">
-                                Tactical Game blah blah
-                            </Typography>
-                            <Typography gutterBottom variant="h6" component="h2">
-                                Copy paste the Wikipedia definition
-                            </Typography>
+                            <p style={{paddingTop: "50px"}}>
+                                <img style={{width: "190px"}} src={require("../Images/haloLogo.png")}></img>
+                                    <Typography style={{textAlign: "justify", padding: "10px"}}variant="body2" gutterBottom>
+                                        Squad is a tactical first-person shooter video game "set in the current modern day environment" being developed by Canadian studio Offworld Industries.
+                                    </Typography>
+                                    <br></br>
+                                    <Button variant="outlined" color="secondary">Read More</Button>
                             </p>
                         </div>
                     </div>
@@ -69,14 +52,13 @@ export default function ContentDiv() {
                 <Grid item md>
                     <div className="rainbowImage plugcard">
                     <div>
-                            <p style={{paddingTop: "160px"}}>
-                                <img style={{width: "190px"}} src={require("../Images/squadLogo.png")}></img>
-                            <Typography gutterBottom variant="h6" component="h2">
-                                Tactical Game blah blah
-                            </Typography>
-                            <Typography gutterBottom variant="h6" component="h2">
-                                Copy paste the Wikipedia definition
-                            </Typography>
+                            <p style={{paddingTop: "70px"}}>
+                                <img style={{width: "190px"}} src={require("../Images/rainbowLogo.png")}></img>
+                                    <Typography style={{textAlign: "justify", padding: "10px"}}variant="body2" gutterBottom>
+                                        Squad is a tactical first-person shooter video game "set in the current modern day environment" being developed by Canadian studio Offworld Industries.
+                                    </Typography>
+                                    <br></br>
+                                    <Button variant="outlined" color="secondary">Read More</Button>
                             </p>
                         </div>
                     </div>

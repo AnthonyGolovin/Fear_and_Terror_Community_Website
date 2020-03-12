@@ -24,12 +24,14 @@ p {
   font-family: Sans-serif;
 }
 body{
+  height: 100%;
   margin-Top: 0px;
+  overflow-x: hidden;
 }
 
 .haloImage {
     background-image: url('./Images/halo.jpg');
-    background-size: 400px 400px;
+    background-size: 350px 350px;
     background-repeat: no-repeat;
 
    
@@ -37,7 +39,7 @@ body{
 
 .squadImage {
     background-image: url('./Images/squad.jpg');
-    background-size: 400px 400px;
+    background-size: 350px 350px;
     background-repeat: no-repeat;
 
     
@@ -46,15 +48,15 @@ body{
 .rainbowImage {
     
     background-image: url('./Images/rainbow.jpg');
-    background-size: 400px 400px;
+    background-size: 350px 350px;
 
     background-repeat: no-repeat;
     
 }
 
 .plugcard {
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     margin: auto;
     border-radius: 10px;
     transition: 0.5s;
@@ -64,8 +66,8 @@ body{
 
 .plugcard div {
     background-color: rgba(51,51,51,0.9);
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     opacity: 0;
     border-radius: 5px;
     transition: 0.5s ;
@@ -74,4 +76,42 @@ body{
 .rainbowImage:hover div, .squadImage:hover div, .haloImage:hover div {
     opacity: 1;
     transition: 0.5s ; 
+}
+
+
+.blob {
+	background: #2E2E2E;
+	border-radius: 50%;
+	margin: 100px;
+	height: 200px;
+	width: 200px;
+}
+
+.blob {
+	background: #2E2E2E;
+	border-radius: 50%;
+	margin: 10px;
+	height: 200px;
+	width: 200px;
+
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+	transform: scale(1);
+	animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
 }
